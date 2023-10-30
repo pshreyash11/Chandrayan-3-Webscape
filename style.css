@@ -9,7 +9,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
+    /* background-color: black; */
+    background-image: url(Assets/croped\ stars.png);
+    background-repeat: repeat;
+    background-size: contain;
     color: white;
     overflow-x: hidden;
 }
@@ -19,8 +22,12 @@ body::-webkit-scrollbar{
 }
 body::-webkit-scrollbar-thumb{
     background: linear-gradient(rgb(188, 194, 191),rgb(72, 73, 72));
-    border-radius: 30%;
+    border-radius: 100vw;
 }
+body::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(rgb(188, 194, 191,0.64),rgb(72, 73, 72,0.64));
+}
+
 
 .hero .title h1::selection{
     color: yellow;
@@ -38,6 +45,23 @@ a{
     
 
 }
+.items ul li a{
+    position: relative;
+}
+.items ul li a::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    width: 0%;
+    height: 2px;
+    background-color: #888;
+    transition: all ease 0.5s;
+}
+.items ul li a:hover::before{
+    width: 100%;
+}
+
 .flex{
     display: flex;
     
@@ -60,20 +84,15 @@ ul li:hover{
     transform: scale(1.2);
 }
 
-/* ul li a:hover{
-    background-color: white;
-    
-    
 
-    
-} */
 .hero{
     width: 100vw;
-    height: 70vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: 50% 50%;
-    background-image: url(Assets/moon\ image.jpg);
+    background-image: url(Assets/moon\ new\ image.jpg);
     background-size: cover;
+    background-position:center;
 }
 .nav{
     display: flex;
@@ -82,7 +101,7 @@ ul li:hover{
 }
 
 .hero .title{
-    font-size: 70px;
+    font-size: 90px;
     color:white;
     display: flex;
     flex-wrap: wrap;
